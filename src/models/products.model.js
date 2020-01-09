@@ -8,8 +8,8 @@ module.exports = function (app) {
   const products = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
-    price: { type: Number, required: true },
-    amount: { type: Number, required: true },
+    price: { type: Number, required: true, min: 0 },
+    amount: { type: Number, required: true, min: 0 },
     category: { type: Schema.Types.ObjectId, ref:'Category' },
   }, {
     timestamps: true
